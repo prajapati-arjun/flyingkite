@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: #292929;
+      }
+
+      section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .kite {
+        width: 0;
+        height: 0;
+        position: relative;
+        border: 60px solid transparent;
+        border-bottom: 70px solid #ff9900;
+        animation: mymove 30s infinite;
+      }
+
+      .kite::before {
+        content: "";
+        position: absolute;
+        border: 60px solid transparent;
+        border-top: 70px solid #ff9900;
+        left: -60px;
+        top: 70px;
+      }
+
+      .kite::after {
+        position: absolute;
+        content: "";
+        border: 30px solid transparent;
+        border-bottom: 40px solid #ff0000;
+        left: -30px;
+        top: 108px;
+      }
+
+      @keyframes mymove {
+        0% {
+          translate: 200px 0px;
+          rotate: 45deg;
+        }
+
+        25% {
+          translate: 200px 200px;
+          rotate: reverse;
+        }
+
+        50% {
+          translate: -200px 200px;
+          rotate: 360deg;
+        }
+
+        75% {
+          translate: -200px 0px;
+          rotate: 180deg;
+        }
+
+        100% {
+          translate: 200px 0px;
+          rotate: -45deg;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div class="kite"></div>
+    </section>
+  </body>
+</html>
